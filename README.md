@@ -1,7 +1,7 @@
-# My FastAPI project
+# fastapi-Users-Posts-App
 
 ## Introduction
-This is a simple project to do CRUD operations based on a .
+This is a simple project to do CRUD operations based on a post created by users (social media API).
 
 
 
