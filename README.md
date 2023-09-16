@@ -23,21 +23,18 @@ venv\Scripts\activate
 pip install -r requirements.txt
 
 ### 5. Run the Code
-### uvicorn app.main:app 
-
+    -  uvicorn app.main:app 
 
 ## Docker
-
 You can also run this FastAPI project using Docker. Follow these steps:
 ### 1. Pull the Docker Image
-docker pull lokeshdvp/fastapi:latest
+- docker pull lokeshdvp/fastapi:latest
 
 ### 2. Run the Docker Container
-docker run -d -p 80:80 lokeshdvp/fastapi:latest
+- docker run -d -p 80:80 lokeshdvp/fastapi:latest
 
 
 ## app: simple social media API to do CRUD operations on posts created by users
-- **Overview**: Version 3 plans to enhance the project with SQLAlchemy ORM and Alembic for data migrations.
 - **Endpoints**: The following CRUD endpoints are available:
 - **POSTS** :
   - `POST /posts`: Create a new post.
