@@ -55,7 +55,7 @@ You can also run this FastAPI project using Docker. Follow these steps:
 - **User Authentication**: added (only logged in user can perform CRUD operations )
 - **API authentication** : JWT based Authentication
 ### in order to run this  below Environment variables have to be created
-- *DB_URL* :database url (example: "postgresql://<user>:<password>@<hostname>:5432/<DB_name>"  )
+- *DB_URL* :database url (example: "postgresql://< user_name >:< password >@ < hostname >:5432/< DB_name >"  )
 - *SECRET_key* :Master key for JWT
 - *Token_Expire_Time_Min* : Time for access token expiration
 - *Algorithm* : algorithm for JWT
