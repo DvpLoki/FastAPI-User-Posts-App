@@ -12,10 +12,11 @@ jobs:
 
     services:
       postgres :
-        image: postgres  
+        image: postgres
         env:
           POSTGRES_PASSWORD: ${{secrets.POSTGRES_PSWD}}
           POSTGRES_DB: ${{secrets.DB_NAME}}
+          POSTGRES_USER: postgres
         ports:
           - 5432:5432
         options: >-
