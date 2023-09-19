@@ -5,7 +5,7 @@ class post(BaseModel):
    
     title:str
     content:str
-    published:bool
+    published:bool=True
 
 
 
