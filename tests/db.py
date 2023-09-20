@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from app.config import settings
 import pytest
-engine=create_engine(settings.DB_URL+'_test')
+engine=create_engine(settings.DB_URL)
 
 testing_sessionlocal=sessionmaker(autocommit=False,bind=engine,autoflush=False)
 
