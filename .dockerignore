@@ -5,3 +5,4 @@ tests/
 alembic/
 alembic.ini
 README.md
+.github/
