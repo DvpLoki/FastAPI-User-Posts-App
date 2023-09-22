@@ -1,4 +1,4 @@
-name: Build 
+name: Build & deploy
 
 on: [push]
 jobs:
@@ -26,3 +26,12 @@ jobs:
       - run: pip install -r requirements.txt
 
       - run: pytest -vv tests/
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build_and_test]
+    environment: deployment
+    steps:
+      - uses: bervProject/railway-deploy@main
+        with:
+          railway_token: ${{ secrets.Railway_API_KEY}}
+          service: "FastAPI" 
