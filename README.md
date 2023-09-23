@@ -4,7 +4,6 @@
 This is a simple project to do CRUD operations based on a post created by users (social media API).
 
 
-
 ## Setup
 To set up a development environment and run the code, follow these steps:
 
@@ -33,12 +32,25 @@ You can also run this FastAPI project using Docker. Follow these steps:
 ### 2. Run the Docker Container
       docker run -d -p 80:80 lokeshdvp/fastapi:latest
 
+## Environment variables
 
-## app: simple social media API to do CRUD operations on posts created by users
+- *DB_URL* :database url (example: "postgresql://< user_name >:< password >@ < hostname >:5432/< DB_name >"  )
+- *SECRET_key* :Master key for JWT
+- *Token_Expire_Time_Min* : Time for access token expiration
+- *Algorithm* : algorithm for JWT
+
+## API link live on render.com
+      https://fastapi-user-posts.onrender.com/
+
+## live API interactive documentation (Swagger UI)
+      https://fastapi-user-posts.onrender.com/docs
+
+
+## User-Posts RESTAPI : simple social media API to do CRUD operations on posts created by users
 - **Endpoints**: The following CRUD endpoints are available:
 - **POSTS** :
   - `POST /posts`: Create a new post.
-  - `GET /posts`: Retrieve all posts.
+  - `GET /posts`: Retrieve all posts with pagination and filtering .
   - `GET /posts/{id}`: Retrieve a post by ID.
    - `GET /posts/latest`: Retrieve latest created posts.
   - `PUT /posts/{id}`: Update a post by ID.
@@ -51,11 +63,6 @@ You can also run this FastAPI project using Docker. Follow these steps:
   - **LOGIN** :
   - `POST /login` : login endpoint for users.
 
-- **Database Changes**: PostgreSQL database used for data storage.
-- **User Authentication**: added (only logged in user can perform CRUD operations )
-- **API authentication** : JWT based Authentication
-### in order to run this  below Environment variables have to be created
-- *DB_URL* :database url (example: "postgresql://< user_name >:< password >@ < hostname >:5432/< DB_name >"  )
-- *SECRET_key* :Master key for JWT
-- *Token_Expire_Time_Min* : Time for access token expiration
-- *Algorithm* : algorithm for JWT
+- **Database**: PostgreSQL with SQLAlchemy ORM and Alembic database Migration.
+- **User Authentication**: oAuth2 Authentication, dependency injection.
+- **API authentication** : JWT based Authentication.
